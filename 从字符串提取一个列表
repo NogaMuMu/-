@@ -1,0 +1,28 @@
+<script>
+    var sentence = 'this is one sentence. this is a sentence with a list if items:'+
+            '  cherries  ,  oranges ,apples   ,bananas. that was the list of items.';
+    //找到冒号位置
+    var start = sentence.indexOf(':');
+    //找到冒号后面第一个句号位置
+    var end = sentence.indexOf('.',start+1);
+    //提取字符串
+    var listStr = sentence.substring(start+1,end);
+    console.log(listStr);
+    //将该字符串分割为一个数组
+
+
+    var fruites = listStr.split(',');
+    console.log(fruites);
+    /*
+    * 去除前后空格
+    * el    ——数组元素的值；
+    * index ——可选的数组元素的索引；
+    * ary   ——数组自身
+    *
+    * */
+    fruites.forEach(function(el,index,ary){
+        ary[index] = el.trim();
+    });
+    console.log(fruites);
+
+</script>
